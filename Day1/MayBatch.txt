@@ -1,0 +1,36 @@
+Agenda:
+
+- Introduction 
+		- Basic Introduction
+		- Experience in IT 
+		- Educational Background
+		- Technical Skills
+		- Project Experience( Technologies used in the project )
+		- Strengths & Interests
+
+- Format of training
+		- Training time  
+		- Assignments
+		- Session Material 
+	
+	* Assignment Submission:
+		- classRoom  - https://classroom.google.com/c/NzgxNTg4MDUyNDM5?cjc=wwg2yoor
+	* Session Material:
+		- gitHub () - https://github.com/PrasadSingatkar
+
+part 1: core java
+part 2: database
+part 3: adv. java
+part 4: springboot
+
+- JDK & IDE Installation (IntelliJ IDE)
+
+https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.msi     -> JDK
+
+https://www.jetbrains.com/idea/download/?section=windows                  -> Download Community Edition not Ultimate
+
+YT Video : https://youtu.be/3VRHSatyJfA?si=cJxF3rVTkpaqtNRp
+
+
+- What is Full Stack Development?
+
