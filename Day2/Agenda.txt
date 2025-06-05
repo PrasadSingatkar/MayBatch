@@ -1,0 +1,10 @@
+Agenda:
+1. Why Java? (Development Cycle, JDK in detail)
+* NS
+
+
+2. Structure of java program
+3. Variables and datatypes
+4. Comments
+5. Operators
+6. Control Statements
