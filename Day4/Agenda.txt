@@ -1,0 +1,15 @@
+Agenda:
+1. Why Java?
+2. Structure of java program
+3. comments
+4. variables & datatypes
+
+
+5. Operators 
+6. Control Statements
+
+
+
+JVM:
+JIT compiler*
+Hot Spot Profiler*
