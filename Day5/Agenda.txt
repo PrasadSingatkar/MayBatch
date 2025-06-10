@@ -1,0 +1,7 @@
+Agenda:
+1. Git installation
+https://www.geeksforgeeks.org/working-on-git-bash/
+https://git-scm.com/downloads
+
+2. Operators
+3. Control Statements(if statement, if-else statement, if-else-if ladder)
