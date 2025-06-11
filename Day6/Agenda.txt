@@ -1,0 +1,19 @@
+Agenda:
+
+1. Switch Case Statements
+2. Looping Statements (for loop, while loop, do-while loop)
+3. Operator Precedence
+
+
+*
+4. Introduction to Object Oriented Programming
+
+int result = (10+3)*4
+Boolean result = 5>3 && 10<20;
+		 T   && T -> T
+
+Int Result= 10+2*3-6/2;
+
+TASK:
+int result = 8/2*(2+5);
+boolean result = 15>10 && 20<25 || 5 == 5;
