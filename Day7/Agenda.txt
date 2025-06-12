@@ -1,0 +1,9 @@
+Agenda:
+- Introduction to Object-Oriented Programming
+		- Why?
+		- Core Concepts
+		- Objects & Classes
+- Key principle of OOP
+- Access Modifiers
+
+
