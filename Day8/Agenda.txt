@@ -1,0 +1,11 @@
+- Protected Access Modifier
+- Default
+- Abstraction
+- Inheritance
+- Polymorphism
+
+
+Inheritance:
+1. Single inheritance 
+2. Multilevel inheritance
+3. Hierarchical inheritance
