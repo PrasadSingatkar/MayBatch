@@ -1,0 +1,22 @@
+~ Create a Vehicle class with properties like speed and a method displayInfo() to show speed. Create a Car class that inherits from Vehicle and adds properties like brand and model. Write a program to display the details of the Car using the displayInfo() method.
+
+~ Design a class hierarchy where:
+Animal is the base class with methods like sound().
+~ Mammal inherits from Animal and has additional properties or methods like hasFur().
+Dog inherits from Mammal and overrides sound() to print "Barks".
+Implement this hierarchy and demonstrate how the Dog class can access properties and methods from both Animal and Mammal.
+
+~ Create a Person class with basic details like name and age. Then, create two subclasses: Student and Teacher. Both should inherit from Person and add specific attributes (e.g., grade for Student and subject for Teacher). Write a program to display details of a Student and a Teacher, showing inheritance in action.
+
+~ Create a MathOperations class with overloaded multiply() methods:
+One method should accept two integers and return their product.
+Another method should accept three integers and return their product.
+Write a program to demonstrate each overloaded method, and try to understand why overloading works here.
+
+~ Develop a class Employee with a method work(), which prints "Employee is working." Create a subclass Manager that overrides work() to print "Manager is managing the team." Demonstrate method overriding by creating objects of Employee and Manager and calling the work() method on each.
+
+~ Create a Person class with a method getDetails() that prints "Person details." Create a Student class that inherits from Person and overrides getDetails() to add "Student details." Use super to call the Person class’s getDetails() method from within the Student class’s getDetails() method, and display both details.
+
+~ Create a class Shape with an overloaded calculateArea() method (one for circle, one for rectangle) and a subclass Triangle that overrides calculateArea() to handle triangles. Demonstrate the difference between overloading and overriding with examples.
+
+~ Consider an e-commerce application with a class Payment. Create subclasses CreditCardPayment, DebitCardPayment, and UPIPayment that each override a pay() method. Demonstrate polymorphism by using a single reference of type Payment to invoke pay() for different payment types
