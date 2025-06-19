@@ -1,0 +1,10 @@
+Agenda:
+1. Constructor 
+2. Solution of TASK
+
+		Create a person class with details like name and age. Then create two subclasses: Student and Teacher. Both should inherit from Person and add specific attributes (e.g. grade for student and subject for teacher). Write a program to display the details of a student and a teacher, showing inheritance in action.
+
+3. Abstraction & Encapsulation
+4. Abstract Class
+
+5. Interfaces
