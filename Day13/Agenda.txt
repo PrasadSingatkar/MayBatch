@@ -1,0 +1,10 @@
+Agenda:
+
+Without Interface -> tightly coupled code 
+With interface    -> loosely coupled code
+TASK: BankAccount 
+Exceptions: 
+	- Difference between error and exception
+	- Exception Hierarchy 
+	- Types of Exceptions
+	- Methods to print exception information
