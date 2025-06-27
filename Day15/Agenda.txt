@@ -1,0 +1,9 @@
+Agenda:
+
+- Implementation - Methods to print exception message
+- Custom Exceptions
+- Getters & Setters
+- Collection Framework Overview
+	- List Interface
+	- List Implementations
+	
