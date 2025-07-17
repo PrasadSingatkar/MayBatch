@@ -1,0 +1,19 @@
+Agenda
+
+- Operators
+- Where clause
+- BETWEEN.....AND Operator
+
+
+- IN Operator
+- IS NULL Operator
+- ORDER BY CLAUSE
+- LIKE Operator
+- LIMIT Clause
+
+Select ename, job From emp Where job = 'Manager';
+
+Select ename, hiredate
+From emp
+Where hiredate between '1981-04-01' and '1981-05-01';
+
