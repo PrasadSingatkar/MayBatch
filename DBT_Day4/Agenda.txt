@@ -1,0 +1,23 @@
+
+
+- IN Operator
+- IS NULL Operator
+- ORDER BY CLAUSE
+- LIKE Operator
+- LIMIT Clause
+- offset
+
+
+Select ename, job
+From emp
+Where job = 'Manager' OR job = 'Clerk';
+
+Select ename, job
+From emp
+Where job IN ('Manager', 'Clerk');
+
+Select ename
+From emp
+Where ename like 'S%';
+
+
