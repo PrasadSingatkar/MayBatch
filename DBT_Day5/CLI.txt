@@ -1,0 +1,325 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use flynaut;
+Database changed
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select distinct job
+    -> from emp;
++-----------+
+| job       |
++-----------+
+| CLERK     |
+| SALESMAN  |
+| MANAGER   |
+| ANALYST   |
+| PRESIDENT |
++-----------+
+5 rows in set (0.02 sec)
+
+mysql> select distinct deptno
+    -> from emp;
++--------+
+| deptno |
++--------+
+|     20 |
+|     30 |
+|     10 |
++--------+
+3 rows in set (0.00 sec)
+
+mysql> Select deptno, count(*) as 'Total Employees'
+    -> from emp;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'flynaut.emp.DEPTNO'; this is incompatible with sql_mode=only_full_group_by
+mysql> Select deptno, count(*) as 'Total Employees'
+    -> from emp
+    -> group by deptno;
++--------+-----------------+
+| deptno | Total Employees |
++--------+-----------------+
+|     20 |               5 |
+|     30 |               6 |
+|     10 |               3 |
++--------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> select count(deptno)  from emp;
++---------------+
+| count(deptno) |
++---------------+
+|            14 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> Select COUNT(*) as Total_Employees from emp;
++-----------------+
+| Total_Employees |
++-----------------+
+|              14 |
++-----------------+
+1 row in set (0.01 sec)
+
+mysql> ^C
+mysql> select count(distinct job) from emp;
++---------------------+
+| count(distinct job) |
++---------------------+
+|                   5 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select sum(sal) as Total_salary from emp;
++--------------+
+| Total_salary |
++--------------+
+|     29025.00 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> Select deptno, sum(sal) as Tootal_salary
+    -> from emp
+    -> group by deptno;
++--------+---------------+
+| deptno | Tootal_salary |
++--------+---------------+
+|     20 |      10875.00 |
+|     30 |       9400.00 |
+|     10 |       8750.00 |
++--------+---------------+
+3 rows in set (0.00 sec)
+
+mysql> select avg(sal) as Average_Salary
+    -> from emp;
++----------------+
+| Average_Salary |
++----------------+
+|    2073.214286 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select job, avg(sal) as avg_salary
+    -> from emp
+    -> group by job;
++-----------+-------------+
+| job       | avg_salary  |
++-----------+-------------+
+| CLERK     | 1037.500000 |
+| SALESMAN  | 1400.000000 |
+| MANAGER   | 2758.333333 |
+| ANALYST   | 3000.000000 |
+| PRESIDENT | 5000.000000 |
++-----------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> Select min(sal) as Minimum_salary, max(sal) as Maximum_salary from emp;
++----------------+----------------+
+| Minimum_salary | Maximum_salary |
++----------------+----------------+
+|         800.00 |        5000.00 |
++----------------+----------------+
+1 row in set (0.00 sec)
+
+mysql> select deptno, min(sal), max(sal)
+    -> from emp
+    -> grou by deptno
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by deptno' at line 3
+mysql> select deptno, min(sal), max(sal)
+    -> from emp
+    -> group by deptno;
++--------+----------+----------+
+| deptno | min(sal) | max(sal) |
++--------+----------+----------+
+|     20 |   800.00 |  3000.00 |
+|     30 |   950.00 |  2850.00 |
+|     10 |  1300.00 |  5000.00 |
++--------+----------+----------+
+3 rows in set (0.00 sec)
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)  | YES  |     | NULL    |       |
+| JOB      | varchar(20)  | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.03 sec)
+
+mysql> Alter table emp
+    -> add Bonus DECIMAL(7,2);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)  | YES  |     | NULL    |       |
+| JOB      | varchar(20)  | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
+| Bonus    | decimal(7,2) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO | Bonus |
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |  NULL |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |  NULL |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |  NULL |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |  NULL |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |  NULL |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |  NULL |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |  NULL |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |  NULL |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |  NULL |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |  NULL |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |  NULL |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |  NULL |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |  NULL |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |  NULL |
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+14 rows in set (0.00 sec)
+
+mysql> alter table emp modify sal decimal(10,2);
+Query OK, 14 rows affected (0.09 sec)
+Records: 14  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| EMPNO    | int           | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)   | YES  |     | NULL    |       |
+| JOB      | varchar(20)   | YES  |     | NULL    |       |
+| MGR      | int           | YES  |     | NULL    |       |
+| HIREDATE | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2)  | YES  |     | NULL    |       |
+| DEPTNO   | int           | YES  |     | NULL    |       |
+| Bonus    | decimal(7,2)  | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> Alter table emp drop column bonus;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| EMPNO    | int           | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)   | YES  |     | NULL    |       |
+| JOB      | varchar(20)   | YES  |     | NULL    |       |
+| MGR      | int           | YES  |     | NULL    |       |
+| HIREDATE | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2)  | YES  |     | NULL    |       |
+| DEPTNO   | int           | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> show databases;
++------------------------+
+| Database               |
++------------------------+
+| decemberbatch          |
+| employee_management_db |
+| flynaut                |
+| hospital               |
+| information_schema     |
+| mall                   |
+| milkapplication        |
+| mysql                  |
+| performance_schema     |
+| practice               |
+| sakila                 |
+| school                 |
+| student_db             |
+| student_tracker        |
+| sys                    |
+| world                  |
++------------------------+
+16 rows in set (0.01 sec)
+
+mysql> use decemberbatch;
+Database changed
+mysql> show tables;
++-------------------------+
+| Tables_in_decemberbatch |
++-------------------------+
+| emp                     |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> drop table emp;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql>
