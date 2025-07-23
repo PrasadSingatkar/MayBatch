@@ -1,0 +1,335 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> Select SQRT(16);
++----------+
+| SQRT(16) |
++----------+
+|        4 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> Select ABS(-23);
++----------+
+| ABS(-23) |
++----------+
+|       23 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select ROUND(123.4567,2);
++-------------------+
+| ROUND(123.4567,2) |
++-------------------+
+|            123.46 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TRUNCATE(123.4567,2);
++----------------------+
+| TRUNCATE(123.4567,2) |
++----------------------+
+|               123.45 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TRUNCATE(123.4567,-2);
++-----------------------+
+| TRUNCATE(123.4567,-2) |
++-----------------------+
+|                   100 |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CONCAT('Hello','Team');
++------------------------+
+| CONCAT('Hello','Team') |
++------------------------+
+| HelloTeam              |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> use flynaut;
+Database changed
+mysql> select concat('NAME: ',ename) from rmp;
+ERROR 1146 (42S02): Table 'flynaut.rmp' doesn't exist
+mysql> select concat('NAME: ',ename) from emp;
++------------------------+
+| concat('NAME: ',ename) |
++------------------------+
+| NAME: SMITH            |
+| NAME: ALLEN            |
+| NAME: WARD             |
+| NAME: JONES            |
+| NAME: MARTIN           |
+| NAME: BLAKE            |
+| NAME: CLARK            |
+| NAME: SCOTT            |
+| NAME: KING             |
+| NAME: TURNER           |
+| NAME: ADAMS            |
+| NAME: JAMES            |
+| NAME: FORD             |
+| NAME: MILLER           |
++------------------------+
+14 rows in set (0.01 sec)
+
+mysql> select ceil(12.3);
++------------+
+| ceil(12.3) |
++------------+
+|         13 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select ceil(12.0);
++------------+
+| ceil(12.0) |
++------------+
+|         12 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select ceil(-12.3);
++-------------+
+| ceil(-12.3) |
++-------------+
+|         -12 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select floor(12.3);
++-------------+
+| floor(12.3) |
++-------------+
+|          12 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> ^C
+mysql> select floor(-12.3);
++--------------+
+| floor(-12.3) |
++--------------+
+|          -13 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> Select substr('database',2,4);
++------------------------+
+| substr('database',2,4) |
++------------------------+
+| atab                   |
++------------------------+
+1 row in set (0.01 sec)
+
+mysql> Select substr('Hello',1,2);
++---------------------+
+| substr('Hello',1,2) |
++---------------------+
+| He                  |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select upper('FlyNaUt');
++------------------+
+| upper('FlyNaUt') |
++------------------+
+| FLYNAUT          |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> select lower('FlyNaUt');
++------------------+
+| lower('FlyNaUt') |
++------------------+
+| flynaut          |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> select instr('Database', 'base');
++---------------------------+
+| instr('Database', 'base') |
++---------------------------+
+|                         5 |
++---------------------------+
+1 row in set (0.01 sec)
+
+mysql> select trim('                Hello                  ');
++-------------------------------------------------+
+| trim('                Hello                  ') |
++-------------------------------------------------+
+| Hello                                           |
++-------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select lpad('Hello', 8,'*');
++----------------------+
+| lpad('Hello', 8,'*') |
++----------------------+
+| ***Hello             |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select rpad('Hello',8,'*');
++---------------------+
+| rpad('Hello',8,'*') |
++---------------------+
+| Hello***            |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select length('Flynaut');
++-------------------+
+| length('Flynaut') |
++-------------------+
+|                 7 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select format(123.456,2);
++-------------------+
+| format(123.456,2) |
++-------------------+
+| 123.46            |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> Select deptno, sum(sal) as Total_salary
+    -> From emp
+    -> Group by deptno;
++--------+--------------+
+| deptno | Total_salary |
++--------+--------------+
+|     20 |     10875.00 |
+|     30 |      9400.00 |
+|     10 |      8750.00 |
++--------+--------------+
+3 rows in set (0.01 sec)
+
+mysql> Select deptno, sum(sal) as Total_salary
+    -> From emp
+    -> Group by deptno
+    -> Having sum(sal) > 9000;
++--------+--------------+
+| deptno | Total_salary |
++--------+--------------+
+|     20 |     10875.00 |
+|     30 |      9400.00 |
++--------+--------------+
+2 rows in set (0.01 sec)
+
+mysql> select curdate();
++------------+
+| curdate()  |
++------------+
+| 2025-07-23 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> Select now();
++---------------------+
+| now()               |
++---------------------+
+| 2025-07-23 12:50:37 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select DATE_FORMAT(curdate(), '%M %d %Y');
++------------------------------------+
+| DATE_FORMAT(curdate(), '%M %d %Y') |
++------------------------------------+
+| July 23 2025                       |
++------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select DATE_FORMAT(curdate(), '%M %D %Y');
++------------------------------------+
+| DATE_FORMAT(curdate(), '%M %D %Y') |
++------------------------------------+
+| July 23rd 2025                     |
++------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | sal     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select ename, date_format(hiredate, '%M %D %Y') as DATE from emp;
++--------+---------------------+
+| ename  | DATE                |
++--------+---------------------+
+| SMITH  | December 17th 1980  |
+| ALLEN  | February 20th 1981  |
+| WARD   | February 22nd 1981  |
+| JONES  | April 2nd 1981      |
+| MARTIN | September 28th 1981 |
+| BLAKE  | May 1st 1981        |
+| CLARK  | June 9th 1981       |
+| SCOTT  | December 9th 1982   |
+| KING   | November 17th 1981  |
+| TURNER | September 8th 1981  |
+| ADAMS  | January 12th 1983   |
+| JAMES  | December 3rd 1981   |
+| FORD   | December 3rd 1981   |
+| MILLER | January 23rd 1982   |
++--------+---------------------+
+14 rows in set (0.00 sec)
+
+mysql> select ename, date_format(hiredate, '%D %M %Y') as DATE from emp;
++--------+---------------------+
+| ename  | DATE                |
++--------+---------------------+
+| SMITH  | 17th December 1980  |
+| ALLEN  | 20th February 1981  |
+| WARD   | 22nd February 1981  |
+| JONES  | 2nd April 1981      |
+| MARTIN | 28th September 1981 |
+| BLAKE  | 1st May 1981        |
+| CLARK  | 9th June 1981       |
+| SCOTT  | 9th December 1982   |
+| KING   | 17th November 1981  |
+| TURNER | 8th September 1981  |
+| ADAMS  | 12th January 1983   |
+| JAMES  | 3rd December 1981   |
+| FORD   | 3rd December 1981   |
+| MILLER | 23rd January 1982   |
++--------+---------------------+
+14 rows in set (0.00 sec)
+
+mysql> select datediff('2022-11-23', '2000-12-01');
++--------------------------------------+
+| datediff('2022-11-23', '2000-12-01') |
++--------------------------------------+
+|                                 8027 |
++--------------------------------------+
+1 row in set (0.00 sec)
+
+mysql>
