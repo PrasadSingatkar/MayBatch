@@ -1,0 +1,22 @@
+Section 1: Single Row Functions
+1. Retrieve the employee names in uppercase along with their jobs from the EMP table.
+2. Fetch the employee names and their salaries. Round off the salary to 1 decimal place.
+3. Find the employee names and the square root of their salaries. Display results for
+employees with salary more than 1000.
+4. Show the employee names and salaries formatted with two decimal places.
+5. Get the first 3 characters of all employee names.
+6. Display employee names with leading spaces removed and trailing periods added
+(e.g., 'ALLEN' should become 'ALLEN.').
+7. Find the length of each employee's name and display it.
+8. Display the names of employees and their salaries, but only for those whose salary is
+greater than 1500 and less than or equal to 3000.
+
+Section 2: DDL Statements
+1. Create a new table called DEPARTMENT with the following columns:
+o DEPTNO (Integer, Primary Key)
+o DNAME (String, length 50)
+o LOCATION (String, length 50)
+2. Add a new column AGE to the EMP table with the INT data type.
+3. Modify the SAL column in the EMP table to have 2 decimal places.
+4. Drop the DEPARTMENT table from the database.
+5. Truncate the EMP table, removing all rows but retaining the structure.
