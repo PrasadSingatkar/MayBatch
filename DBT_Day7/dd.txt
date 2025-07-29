@@ -1,0 +1,11 @@
+Update emp
+Set job = 'Senior Clerk'
+Where empno = 7369;
+
+
+Select concat(TRIM(ename),'.') as empName from emp;
+
+INSERT INTO DEPT VALUES(10,'ACCOUNTING','NEW YORK');
+INSERT INTO DEPT VALUES(20,'RESEARCH','DALLAS');
+INSERT INTO DEPT VALUES(30,'SALES','CHICAGO');
+INSERT INTO DEPT VALUES(40,'OPRATIONS','BOSTON');
