@@ -1,0 +1,4 @@
+Agenda:
+1. TreeMap
+2. Collections and Collection -> Methods of utility class
+3. Object Class
