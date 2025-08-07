@@ -1,0 +1,11 @@
+Agenda:
+
+1.Maven
+2.Project Structure
+3.pom.xml
+4.maven flow
+5.project coordinates
+6. wrapper files
+7. application.properties
+8. spring-boot-starters
+9. SB dev-tools 
